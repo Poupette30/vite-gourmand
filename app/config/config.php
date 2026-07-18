@@ -4,7 +4,7 @@ return [
     'base_url' => $_ENV['APP_URL'] ?? 'http://localhost:8000',
     'db' => [
         'host' => $_ENV['DB_HOST'] ?? 'localhost',
-        'port' => $_ENV['DB_PORT'] ?? 'localhost',
+        'port' => $_ENV['DB_PORT'] ?? '3308',
         'name' => $_ENV['DB_NAME'] ?? 'vite_gourmand',
         'user' => $_ENV['DB_USER'] ?? 'root',
         'password' => $_ENV['DB_PASS'] ?? '',
