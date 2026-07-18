@@ -48,7 +48,6 @@ Ce projet a été réalisé afin de mettre en pratique les compétences acquises
 * HTML5
 * CSS3
 * JavaScript
-* Bootstrap 5
 
 ## Back-end
 
