@@ -1,0 +1,15 @@
+@startuml
+actor Utilisateur
+participant "Page détail menu" as Detail
+participant "OrderController" as OC
+database MySQL
+participant Mailer
+Utilisateur -> Detail: Cliquer Commander
+Detail -> OC: GET order_create(menu_id)
+OC -> MySQL: Lire menu + utilisateur
+Utilisateur -> OC: POST order_store
+OC -> OC: Calcul prix/remise/livraison
+OC -> MySQL: Créer commande + historique
+OC -> Mailer: Envoyer confirmation
+OC --> Utilisateur: Redirection mes commandes
+@enduml

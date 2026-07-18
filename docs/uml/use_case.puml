@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+actor Visiteur
+actor Utilisateur
+actor Employe
+actor Administrateur
+Visiteur --> (Consulter les menus)
+Visiteur --> (Créer un compte)
+Visiteur --> (Contacter l'entreprise)
+Utilisateur --> (Commander un menu)
+Utilisateur --> (Suivre une commande)
+Utilisateur --> (Laisser un avis)
+Employe --> (Gérer menus et plats)
+Employe --> (Mettre à jour commandes)
+Employe --> (Modérer avis)
+Administrateur --> (Créer employé)
+Administrateur --> (Désactiver employé)
+Administrateur --> (Consulter statistiques)
+@enduml
