@@ -41,9 +41,6 @@ $routes = [
     'admin_reviews' => fn() => (new AdminController())->reviews(),
     'admin_review_approve' => fn() => (new AdminController())->approveReview(),
     'admin_review_refuse' => fn() => (new AdminController())->refuseReview(),
-    'admin_reviews' => fn() => (new AdminController())->reviews(),
-    'admin_review_approve' => fn() => (new AdminController())->approveReview(),
-    'admin_review_refuse' => fn() => (new AdminController())->refuseReview(),
     'admin' => fn() => (new AdminController())->dashboard(),
     'admin_analytics' => fn() => (new AnalyticsController())->index(),
 ];
