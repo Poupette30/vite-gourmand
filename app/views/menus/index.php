@@ -19,7 +19,7 @@
 </form>
 <section id="menu-list" class="grid"><?php foreach ($menus as $m): ?>
         <article class="card menu-card">
-            <img src="<?= Security::e($m['image_url']) ?>" alt="">
+            <img src="<?= Security::e($m['image_url']) ?>" alt="<?= Security::e($m['title']) ?>">
             <h2><?= Security::e($m['title']) ?>
             </h2>
             <p><?= Security::e($m['description']) ?></p>
@@ -56,7 +56,7 @@
             article.className = 'card menu-card';
 
             article.innerHTML = `
-            <img src="${escapeHtml(menu.image_url)}" alt="">
+            <img src="${escapeHtml(menu.image_url)}" alt="${escapeHtml(menu.title)}">
             <h2>${escapeHtml(menu.title)}</h2>
             <p>${escapeHtml(menu.description)}</p>
             <p>Dès ${parseInt(menu.min_people)} personnes · ${parseFloat(menu.base_price).toFixed(2).replace('.', ',')} €</p>

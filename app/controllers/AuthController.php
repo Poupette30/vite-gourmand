@@ -34,11 +34,29 @@ final class AuthController
 
         try {
             User::create($_POST);
-            Mailer::welcome($_POST['email'], $_POST['first_name']);
+
+            Mailer::welcome(
+                $_POST['email'] ?? '',
+                $_POST['first_name'] ?? ''
+            );
+
             header('Location: index.php?page=login&registered=1');
             exit;
+        } catch (PDOException $e) {
+            if ($e->getCode() === '23000') {
+                View::render('auth/register', [
+                    'error' => 'Cette adresse e-mail est déjà utilisée.'
+                ]);
+                return;
+            }
+
+            View::render('auth/register', [
+                'error' => 'Une erreur est survenue lors de la création du compte.'
+            ]);
         } catch (Throwable $e) {
-            View::render('auth/register', ['error' => $e->getMessage()]);
+            View::render('auth/register', [
+                'error' => 'Une erreur est survenue lors de la création du compte.'
+            ]);
         }
     }
 
