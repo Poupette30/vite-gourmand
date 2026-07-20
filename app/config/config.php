@@ -24,30 +24,25 @@ return [
 
     'db' => [
         'host' => $env(
-            'MYSQLHOST',
-            $env('DB_HOST', '127.0.0.1')
+            'DB_HOST',
+            $env('MYSQLHOST', '127.0.0.1')
         ),
-
         'port' => $env(
-            'MYSQLPORT',
-            $env('DB_PORT', '3308')
+            'DB_PORT',
+            $env('MYSQLPORT', '3308')
         ),
-
         'name' => $env(
-            'MYSQLDATABASE',
-            $env('DB_NAME', 'vite_gourmand')
+            'DB_NAME',
+            $env('MYSQLDATABASE', 'vite_gourmand')
         ),
-
         'user' => $env(
-            'MYSQLUSER',
-            $env('DB_USER', 'root')
+            'DB_USER',
+            $env('MYSQLUSER', 'root')
         ),
-
         'password' => $env(
-            'MYSQLPASSWORD',
-            $env('DB_PASS', '')
+            'DB_PASS',
+            $env('MYSQLPASSWORD', '')
         ),
-
         'charset' => 'utf8mb4',
     ],
 
