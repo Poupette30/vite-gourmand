@@ -1,5 +1,16 @@
-DROP DATABASE IF EXISTS vite_gourmand; CREATE DATABASE vite_gourmand CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; USE vite_gourmand;
-CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY, first_name VARCHAR(80) NOT NULL, last_name VARCHAR(80) NOT NULL, email VARCHAR(180) NOT NULL UNIQUE, phone VARCHAR(30) NOT NULL, address TEXT NOT NULL, password_hash VARCHAR(255) NOT NULL, role ENUM('utilisateur','employe','administrateur') NOT NULL DEFAULT 'utilisateur', is_active BOOLEAN NOT NULL DEFAULT TRUE, created_at DATETIME DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(80) NOT NULL,
+    last_name VARCHAR(80) NOT NULL,
+    email VARCHAR(180) NOT NULL UNIQUE,
+    phone VARCHAR(30) NOT NULL,
+    address TEXT NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    role ENUM('utilisateur','employe','administrateur')
+        NOT NULL DEFAULT 'utilisateur',
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 CREATE TABLE themes(id INT AUTO_INCREMENT PRIMARY KEY,label VARCHAR(80) NOT NULL UNIQUE); CREATE TABLE diets(id INT AUTO_INCREMENT PRIMARY KEY,label VARCHAR(80) NOT NULL UNIQUE); CREATE TABLE dish_categories(id INT AUTO_INCREMENT PRIMARY KEY,label VARCHAR(80) NOT NULL UNIQUE);
 CREATE TABLE dishes(id INT AUTO_INCREMENT PRIMARY KEY, category_id INT NOT NULL, name VARCHAR(150) NOT NULL, description TEXT, FOREIGN KEY(category_id) REFERENCES dish_categories(id));
 CREATE TABLE dish_allergens(id INT AUTO_INCREMENT PRIMARY KEY, dish_id INT NOT NULL, allergen VARCHAR(80) NOT NULL, FOREIGN KEY(dish_id) REFERENCES dishes(id) ON DELETE CASCADE);
