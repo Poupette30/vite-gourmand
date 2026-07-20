@@ -87,7 +87,10 @@ final class AuthController
 
             User::saveResetToken((int)$user['id'], $token, $expires);
 
-            $resetLink = "http://localhost/vite-gourmand/public/index.php?page=reset_password&token=" . urlencode($token);
+            $config = require __DIR__ . '/../config/config.php';
+
+            $resetLink = rtrim($config['base_url'], '/') .
+                '/index.php?page=reset_password&token=' . urlencode($token);
 
             View::render('auth/forgot_password', [
                 'success' => $message,
