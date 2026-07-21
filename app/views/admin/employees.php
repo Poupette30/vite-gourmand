@@ -1,5 +1,5 @@
 <h1>Gestion des employés</h1>
-<form method="post" action="index.php?page=admin_employee_create"><?= Security::csrfField() ?>
+<form class="employee-form" method="post" action="index.php?page=admin_create_employee"><?= Security::csrfField() ?>
     <label>Email<input type="email" name="email" required></label>
     <label>Prénom<input name="first_name" value="Employé" required></label>
     <label>Nom<input name="last_name" value="Vite Gourmand" required></label>
