@@ -13,7 +13,7 @@ final class Review
     }
     public static function approved(): array
     {
-        return Database::pdo()->query('SELECT r.*,u.first_name FROM reviews r JOIN users u ON u.id=r.user_id WHERE r.status="approved" ORDER BY r.created_at DESC LIMIT 6')->fetchAll();
+        return Database::pdo()->query('SELECT r.*,u.first_name FROM reviews r JOIN users u ON u.id=r.user_id WHERE r.status="approved" ORDER BY r.created_at DESC')->fetchAll();
     }
     public static function moderate(int $id, string $status): void
     {
