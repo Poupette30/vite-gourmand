@@ -7,14 +7,18 @@ class AnalyticsController
         Auth::requireRole(['administrateur']);
 
         try {
-            $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+            $config = require __DIR__ . '/../config/config.php';
+
+            $manager = new MongoDB\Driver\Manager(
+                $config['mongo_uri']
+            );
 
             $query = new MongoDB\Driver\Query([], [
                 'sort' => ['orders_count' => -1]
             ]);
 
             $cursor = $manager->executeQuery(
-                'vite_gourmand_stats.orders_by_menu',
+                $config['mongo_database'] . '.orders_by_menu',
                 $query
             );
 
