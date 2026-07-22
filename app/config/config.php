@@ -48,7 +48,10 @@ return [
 
     'mongo_uri' => $env(
         'MONGO_URI',
-        'mongodb://127.0.0.1:27017'
+        $env(
+            'MONGO_URL',
+            'mongodb://127.0.0.1:27017'
+        )
     ),
 
     'mongo_database' => $env(
