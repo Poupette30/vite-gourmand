@@ -2,6 +2,8 @@
 
 ## Choix techniques
 
+L'application repose sur une architecture MVC développée en PHP afin de séparer les données, la logique métier et l'interface utilisateur.
+
 La stack technique retenue pour le projet est la suivante :
 
 - PHP 8 avec PDO
@@ -12,7 +14,7 @@ La stack technique retenue pour le projet est la suivante :
 - MySQL / MariaDB pour les données relationnelles
 - MongoDB pour les statistiques administrateur
 
-Cette architecture respecte les exigences de l'ECF, qui impose l'utilisation d'une base de données relationnelle et d'une base NoSQL.
+Cette architecture respecte les exigences de l'ECF, qui imposent l'utilisation d'une base de données relationnelle et d'une base NoSQL.
 
 ## Sécurité
 - Mots de passe hachés avec `password_hash`.
@@ -28,6 +30,7 @@ Cette architecture respecte les exigences de l'ECF, qui impose l'utilisation d'u
 - Contrôle des permissions.
 - Protection contre l'injection SQL.
 - Protection XSS.
+- Vérification des données saisies avant leur traitement.
 
 
 ## RGPD
@@ -42,6 +45,7 @@ Les données collectées servent à créer un compte, gérer les commandes et r�
 
 ## Modèle de données
 
+Le diagramme de classes UML est fourni dans un document PDF joint à la documentation. Il représente les principales entités de l'application ainsi que leurs relations et cardinalités.
 La base de données relationnelle repose principalement sur les entités suivantes :
 
 - users
@@ -59,12 +63,12 @@ Les statistiques destinées à l'espace administrateur sont stockées dans Mongo
 
 1. Créer la base MySQL/MariaDB.
 2. Importer `database/schema.sql` puis `database/seed.sql`.
-3. Créer la base MongoDB et lancer `mongo/analytics.seed.js`.
-4. Configurer les variables : `APP_URL`, `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS`, `MONGO_URI`.
+3. Créer la base MongoDB puis importer le fichier `mongo/analytics.seed.js`.
+4. Configurer les variables d'environnement : `APP_URL`, `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS`, `MONGO_URI`.
 5. Pointer le serveur web vers le dossier `public`.
 6. Vérifier le bon fonctionnement de l'application.
 7. Tester les connexions MySQL et MongoDB.
-8. Vérifier les fonctionnalités principales et les droits d'accès selon les rôles.
+8. Vérifier les principales fonctionnalités ainsi que les droits d'accès selon les différents rôles.
 
 Après ces étapes, l'application est prête à être utilisée et testée avec les différents profils (utilisateur, employé et administrateur).
 
@@ -85,8 +89,9 @@ app/
 public/
 database/
 docs/
-assets/
-config/
+mongo/
+tests/
+README.md 
 ```
 
 ## Environnement de développement
@@ -102,7 +107,7 @@ config/
 - Git
 - GitHub
 - Figma
-
+- Railway (déploiement)
 
 ## Technologies utilisées
 
@@ -129,16 +134,16 @@ MongoDB est utilisé uniquement pour les statistiques de l'espace administrateur
 
 Les données métier (utilisateurs, menus, commandes, avis...) restent stockées dans MySQL.
 
-Les agrégats sont enregistrés dans la collection :
+Les données statistiques sont enregistrées dans la collection :
 
 `orders_by_menu`
 
-Ils permettent :
+Elles permettent :
 
-- d'afficher un graphique comparatif des commandes par menu ;
-- de comparer les menus entre eux ;
+- d'afficher un tableau comparatif des commandes par menu ;
+- de comparer les performances des différents menus ;
 - de calculer le nombre de commandes ;
-- de calculer le chiffre d'affaires selon les filtres sélectionnés.
+- de calculer le chiffre d'affaires par menu.
 
 
 

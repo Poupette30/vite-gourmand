@@ -20,14 +20,14 @@ Cette organisation a permis de suivre l'avancement des fonctionnalités tout au 
 
 Le projet est versionné avec Git et hébergé sur GitHub.
 
-Le développement a été réalisé principalement sur la branche `main`. Les différentes fonctionnalités ont été ajoutées et testées progressivement au cours du développement avant d'être validées.
+Le développement a été réalisé à l'aide de Git afin de conserver l'historique des modifications et de faciliter le suivi du projet.
 
 ## User stories principales
 - En tant que visiteur, je veux consulter les menus pour choisir une prestation.
 - En tant qu’utilisateur, je veux commander un menu et suivre son statut.
 - En tant qu’employé, je veux gérer les commandes afin d’organiser la production.
 - En tant qu’administrateur, je veux créer et désactiver des employés.
-- En tant qu’administrateur, je veux comparer les commandes par menu via un graphique.
+- En tant qu'administrateur, je veux consulter les statistiques des commandes par menu.
 
 ## Critères d’acceptation
 
@@ -57,7 +57,8 @@ Les principales difficultés ont concerné :
 - la configuration de WampServer ;
 - la gestion des rôles ;
 - le développement des filtres dynamiques ;
-- la réalisation des maquettes Figma.
+- la réalisation des maquettes Figma ;
+- le déploiement de l'application sur Railway ;
 
 Chaque difficulté a été résolue progressivement grâce à une démarche de recherche, de tests, de corrections et de validation de chaque fonctionnalité avant de passer à la suivante.
 

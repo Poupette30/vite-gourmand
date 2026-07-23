@@ -1,5 +1,9 @@
 # Manuel utilisateur
 
+Version : 1.0
+
+Application : Vite & Gourmand
+
 Ce document explique le fonctionnement de l'application Vite & Gourmand selon les différents profils d'utilisation.
 
 ## Comptes de démonstration
@@ -44,7 +48,7 @@ L'employé assure le suivi opérationnel des commandes.
 ## Parcours administrateur
 1. Créer un compte employé.
 2. Désactiver un employé.
-3. Accéder aux fonctions employé.
+3. Accéder à l'ensemble des fonctionnalités de l'application.
 4. Consulter les statistiques par menu depuis MongoDB.
 
 L'administrateur dispose de l'ensemble des droits de gestion de l'application.
@@ -53,6 +57,7 @@ L'administrateur dispose de l'ensemble des droits de gestion de l'application.
 - Se déconnecter après utilisation.
 - Utiliser les comptes correspondant à son rôle.
 - Vérifier les informations saisies avant de valider une commande.
+- Utiliser un navigateur récent (Chrome, Edge ou Firefox).
 
 
 ## Captures d'écran
@@ -87,4 +92,5 @@ L'administrateur dispose de l'ensemble des droits de gestion de l'application.
 
 ## Conclusion
 
-Ce manuel présente les principales fonctionnalités de l'application pour chaque profil utilisateur. Les captures d'écran présentées ci-dessus illustrent les principales fonctionnalités de l'application et facilitent sa prise en main.
+Ce manuel présente les principales fonctionnalités de l'application pour chacun des profils utilisateurs. 
+Les captures d'écran permettent d'illustrer les différents parcours possibles et facilitent la prise en main de l'application.
