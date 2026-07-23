@@ -12,4 +12,5 @@ config/config.local.php
 .idea/
 
 Thumbs.db
-.DS_Store
+.DS_Storedocs/livrables/*.docx
+docs/livrables/*.docx
